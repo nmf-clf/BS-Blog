@@ -1,0 +1,44 @@
+<div id="article-list">
+   <div class="panel panel-default content-item essey-title">
+        <div class="panel-heading">
+              <p class="panel-title">
+                最新文章
+              </p>
+        </div>
+    </div>
+    {% for article in articles %}
+    <div class="panel panel-default content-item">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            <a href="/view/{{ article._id }}" target="_blank">{{ article.title }}</a>
+          </h3>
+        </div>
+        <div class="panel-body">
+          {{ article.intro }}
+        </div>
+         <div class="panel-footer">
+            <span class="glyphicon glyphicon-user"></span>
+            <span class="content-footer-text text-muted">
+              {{ article.user.username }}
+            </span>
+            <span class="glyphicon glyphicon-th-list"></span>
+            <span class="content-footer-text text-muted">
+              {{ article.category.name }}
+            </span>
+            <span class="glyphicon glyphicon-time"></span>
+            <span class="content-footer-text text-muted">
+              {{ article.createdAt | date('Y/m/d---H:i:s',-8*60) }}
+            </span>
+            <span class="glyphicon glyphicon-eye-open"></span>
+            <span class="content-footer-text text-muted"><em>
+              {{ article.click }}
+            </em>人已阅读</span>
+         </div>
+    </div>
+    {% endfor %}
+  </div>
+
+
+ <nav aria-label="Page navigation"  id="article-page" data-url='/articles' data-id="{{ category }}">
+{% include './pagination.html' %}
+</nav>

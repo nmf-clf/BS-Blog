@@ -1,0 +1,28 @@
+
+  <ul class="pagination pagination-right">
+    {% if pages > 1 %}
+    <li>
+      <a href="javascript:;" aria-label="Previous">
+        <span aria-hidden="true">上一页</span>
+      </a>
+    </li>
+    {% for i in list %}  <!-- 有一个问题没有解决 -->
+      {% if i == page %}
+      <li class="active">
+        <a href="javascript:;">{{ i }}</a>
+      <li>
+      {% else %}  
+      <li>
+        <a href="javascript:;" >{{ i }}</a>
+      <li>
+      {% endif %}
+
+    {% endfor %}
+
+    <li>  
+       <a href="javascript:;" aria-label="Next">
+        <span aria-hidden="true">下一页</span>
+      </a>
+    </li>
+    {% endif %}
+  </ul>

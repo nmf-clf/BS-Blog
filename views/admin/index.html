@@ -1,0 +1,27 @@
+{% extends './layout.html' %}
+{% block header %}欢迎来到管理员中心~{% endblock %}
+
+{% block content %}
+ <div class="row placeholders">
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4><a href="/admin/users" class="link">用户信息管理</a></h4>
+              <span class="text-muted">User Information Management</span>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4><a href="/category" class="link">动漫类别管理</a></h4>
+              <span class="text-muted">Comic Category Management</span>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4><a href="/article" class="link">动漫文章管理</a></h4>
+              <span class="text-muted">Comic Article Management</span>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4><a href="/admin/comments" class="link">用户评论管理</a></h4>
+              <span class="text-muted">User Comment Management</span>
+            </div>
+          </div>
+{% endblock %}

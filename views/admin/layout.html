@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>妖精の尾巴:后台管理</title>
+
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="/css/dashboard.css" rel="stylesheet">
+    <link href="/css/admin.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top admin-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand admin-top-lf" href="javascript:;">admin管理后台</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">欢迎进入 妖精の尾巴 后台管理中心!</a></li>
+            <li>
+              <div class="dropdown user-info">
+                <button class="btn btn-default dropdown-toggle" type="button" id="user-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                  {{ userInfo.username }}
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu admin-logout" aria-labelledby="user-menu">
+                  <li style="width: 50px;"><a href="/user/logout" id="logout">退出系统</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search...">
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar admin-later">
+            <li class="a-l-xt"><a href="/admin">系统管理首页</a></li>
+            <li><a href="/admin/users"><span class="glyphicon glyphicon-user"></span>用户信息管理 </a></li>
+            <li><a href="/category"><span class="glyphicon glyphicon-th-list"></span>动漫类别管理</a></li>
+            <li><a href="/article"><span class="glyphicon glyphicon-text-width"></span>动漫文章管理</a></li>
+            <li><a href="/admin/comments"><span class="glyphicon glyphicon-comment"></span>用户评论管理</a></li>
+            <!-- <li><a href="/resource">网站资源管理</a></li> -->
+            <li><a href="/admin/repassword"><span class="glyphicon glyphicon-lock"></span>修改密码</a></li>
+            <!-- <li><a href="/">退出系统</a></li> -->
+            <li class="a-l-fh"><a href="/" target="_blank"><span class="glyphicon glyphicon-chevron-left"></span>返回首页</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">
+            {% block header %}{% endblock %}
+          </h1>
+            {% block content %}{% endblock %}
+        </div>
+      </div>
+    </div>
+  </body>
+<script src="/lib/jQuery/jquery-1.12.4.min.js"></script>
+<script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="/js/admin.js"></script>
+{% block end %}
+{% endblock %}
+</html>

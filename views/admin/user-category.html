@@ -1,0 +1,31 @@
+{% extends './layout.html' %}
+{% block header %}动漫类别管理{% endblock %}
+
+{% block content %}
+<a class="btn btn-primary btn-lg cate-btn" href="/category/add">   添加分类   
+</a>
+<table class="table table-bordered admin-behind-text">
+	<tr>
+  	<th>id</th>
+  	<th>分类名称</th>
+  	<th>排序</th>
+  	<th>操作</th>
+  </tr>
+  {% for category in categories %}
+   <tr>
+  	<td>{{ category._id.toString() }}</td>
+  	<td>{{ category.name }}</td>
+  	<td>{{ category.order }}</td>
+  	<td>
+  		<a href="/category/edit/{{ category._id.toString() }}">修改</a>
+  		<a href="/category/delete/{{ category._id.toString() }}">删除</a>
+  	</td>
+  </tr> 	
+  {% endfor %}
+</table>
+
+{% if pages > 1 %}
+{% include './pagination.html' %}
+{% endif %}
+
+{% endblock %}

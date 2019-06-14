@@ -1,0 +1,36 @@
+{% extends './layout.html' %}
+{% block header %}添加文章管理{% endblock %}
+
+{% block content %}
+<a class="btn btn-primary btn-lg cate-btn" href="/article/add">   添加文章   
+</a>
+<table class="table table-bordered admin-behind-text">
+	<tr>
+  	<th>标题</th>
+  	<th>分类</th>
+  	<th>创建时间</th>
+  	<th>作者</th>
+  	<th>点击量</th>
+  	<th>操作</th>
+  </tr>
+  {% for article in articles %}
+   <tr>
+  	<td>{{ article.title }}</td>
+  	<td>{{ article.category.name }}</td>
+  	<td>{{ article.createdAt | date('Y/m/d---H:i:s',-8*60) }}</td>
+  	<td>{{ article.user.username }}</td>
+  	<td>{{ article.click }}</td>
+  	<td>
+  		<a href="/view/{{ article._id.toString() }}">查看</a>
+  		<a href="/article/edit/{{ article._id.toString() }}">修改</a>
+  		<a href="/article/delete/{{ article._id.toString() }}">删除</a>
+  	</td>
+  </tr> 	
+  {% endfor %}
+</table>
+
+{% if pages > 1 %}
+ {% include './pagination.html' %}
+{% endif %}
+
+{% endblock %}

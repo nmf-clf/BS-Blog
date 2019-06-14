@@ -1,0 +1,72 @@
+.admin-top{
+	/* background-color: #4b0082; */
+}
+.admin-logout{
+	box-sizing: border-box;
+	width: 50px;
+	margin-left: 50px;
+}
+.admin-top-lf{
+	font-size: 30px;
+	position: relative;
+	left: 70px;
+}
+/* .admin-m-r{
+	margin-right: 10px;
+} */
+.admin-later span{
+	margin-right: 10px;
+}
+.user-info{
+	margin-top: 8px;
+    margin-right: 50px;
+}
+.cate-btn{
+	margin-bottom: 10px;
+}
+.ck-editor__editable{
+	min-height: 300px;
+}
+table.table {
+	table-layout: fixed;
+}
+td{
+	word-break: break-word;
+}
+.btn-add{
+	margin-top: 10px;
+}
+.row-site{
+	margin-bottom: 10px;
+}
+.admin-later{
+
+	text-align: center;
+}
+.admin-later .a-l-xt{
+	font-size: 20px;
+	font-weight: 800;
+}
+.link{
+	text-decoration: none !important;
+	color: black;
+}
+.link:hover{
+	color: #f65a8a !important;
+}
+/* .pagination-right{
+	background-color: red;
+	color: red;
+} */
+
+.admin-behind-text th{
+	text-align: center;
+}
+.admin-behind-text td{
+	text-align: center;
+}
+
+.pagination-right{
+	position: absolute;
+	left: 70%;
+}
